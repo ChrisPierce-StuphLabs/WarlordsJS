@@ -3,7 +3,24 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body background="BG.jpg">
+<div align="center">
+<ul>
+<img src="zeus.png" height="125" width="87">
+<img src="hades.png" height="125" width="87">
+<img src="hermes.png" height="125" width="87">
+<img src="apollo.png" height="125" width="87">
+<img src="">
+</ul>
+<br />
+<p>
+<button type=button> Zeus. </button>
+<button type=button> Hades. </button>
+<button type=button> Hermes. </button>
+<button type=button> Apollo. </button>
+<button type=button> Aphrodite. </button>
+
+</div>
 <script type="text/javascript">
 	
 
@@ -390,7 +407,7 @@ function getRandomArbitrary(min, max) {
 
 //System functions
 //gameOver() is passed the winner object, and displays text and graphics inidicating the winner /stats / etc
-function gameOver(){
+function gameOver(warlord0, warlord1){
 	if(warlord == warlord0){
 		//display losing graphics and text
 
@@ -405,51 +422,52 @@ function displayWarlords(zeus, hades, hermes, apollo, aphrodite){
 
 }
 
-function pickWarlords(zeus, hades, hermes, apollo, aphrodite){
+
+//use buttons to indicate which warlords are available
+function pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1){
 	alert("Please pic your Warlord. ");
 	
 }
 
+
 //for now it's assumed that since only greek gods are available, therefor the object has to be one
 //AI is warlord0, Player is warlord1
-//var warlord0;
-//var warlord1;
 
 
 //picks a warlord successfully, having trouble getting a property from it though
 //+ typeof(greekGod)+ " " + typeof(warlord0)  FOR LATER
-function aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0, warlord1){
+function aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0, team0){
 	//1-5 in order of parameters passed to this function
  	var aiChoice = getRandomArbitrary(1,6);
  	var arr = [];
  	switch (aiChoice){
 	   case 1: 
 	   		warlord0 = zeus;
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
 	        console.log("type: " + warlord0.type + "");  
 	        break;
 
 	   case 2: 
 	   		warlord0 = hades;
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
 	        console.log("type: " + warlord0.type + "");	        
 	        break;
 
 	   case 3: 
 	   		warlord0 = hermes;
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name); 
+	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name); 
 	        console.log("type: " + warlord0.type + "");	         
 	        break;
 
 	   case 4: 
 	   		warlord0 = apollo;
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);
+	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);
 	        console.log("type: " + warlord0.type + "");	          
 	        break;
 
 	   case 5: 
 	   		warlord0 = aphrodite;
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
 	        console.log("type: " + warlord0.type + "");	        
 	        break;	      	       	     
 
@@ -457,7 +475,7 @@ function aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0, warlor
 	       alert('Default case happened... Wtf? ');
 	       break;
 	}
-	return;
+	return warlord0;
 }
 
 
@@ -486,7 +504,7 @@ console.log(getRandomArbitrary(1,3));
 console.log(getRandomArbitrary(1,6));
 
 //var 
-aiPickWarlords(zeus, hades, hermes, apollo, aphrodite);
+aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0);
 console.log();
 
 
