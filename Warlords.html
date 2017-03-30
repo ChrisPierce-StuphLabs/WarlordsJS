@@ -76,7 +76,9 @@
 	}	//end class God
 
 
-	class greekGod extends God{
+	class greekGod{
+
+		/*
 		constructor(name, type, hp, attack, defence, nationality){
 			super(name, type, hp, attack, defence);
 			this.nationality = nationality;
@@ -91,7 +93,67 @@
 			if(newNationality){
 				this._nationality = newNationality;
 			}
+		} */
+
+
+		constructor(name, type, hp, attack, defence){
+			this.name = name;
+			this.type = type;
+			this.hp = hp;
+			this.attack = attack;
+			this.defence = defence;
 		}
+
+		get name(){
+			return this.name;
+		}
+
+		get type(){
+			return this.type;
+		}
+
+		get hp(){
+			return this.hp
+		}
+
+		get attack(){
+			return this.attack;
+		}
+
+		get defence(){
+			return this.defence;
+		}
+
+		set name(newName){
+        	if(newName){
+            	this._name = newName;
+        	}
+        }
+
+   		set type(newType){
+        	if(newType){
+            	this._type = newType;
+        	}
+        }
+   		
+   		set hp(newHp){
+        	if(newHp){
+            	this._hp = newHp;
+        	}
+        }
+   		
+   		set attack(newAttack){
+        	if(newAttack){
+            	this._attack = newAttack;
+        	}
+        }
+   		
+   		set defence(newDefence){
+        	if(newDefence){
+            	this._defence = newDefence;
+        	}
+        }
+
 
 	}	//end class greekGod
 
@@ -173,46 +235,49 @@ var warlord0;
 var warlord1;
 
 
-
+//picks a warlord successfully, having trouble getting a property from it though
 function aiPickWarlords(zues, hades, hermes, apollo, aphrodite, warlord0){
 	//1-5 in order of parameters passed to this function
  	var aiChoice = getRandomArbitrary(1,6);
+ 	var arr = [];
  	switch (aiChoice){
 	   case 1: 
 
 	   		warlord0 = new greekGod("Zues", "electric", 200, 18, 10, "Greek");	
-	        alert('Ai Chooses: ' + aiChoice + " which is named: " + super.name);    
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + typeof(greekGod)+ " " + typeof(warlord0));    
 	        break;
 
 	   case 2: 
 	       alert('Ai Chooses: ' + aiChoice);
 	       warlord0 = new greekGod("Hades", "fire", 220, 17, 9, "Greek");
-	       alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name());  
+	       alert('Ai Chooses: ' + aiChoice + " which is named: " + typeof(greekGod)+ " " + typeof(warlord0));  
 	       break;
 
 	   case 3: 
 	       alert('Ai Chooses: ' + aiChoice);
 	       warlord0 = new greekGod("Hermes", "water", 240, 16, 7, "Greek");
-	       alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name());  
+	       alert('Ai Chooses: ' + aiChoice + " which is named: " + typeof(greekGod)+ " " + typeof(warlord0));  
 	       break;
 
 	   case 4: 
 	       alert('Ai Chooses: ' + aiChoice);
 	       warlord0 = new greekGod("Apollo", "flying", 230, 18, 8, "Greek");
-	       alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name());  
+	       alert('Ai Chooses: ' + aiChoice + " which is named: " + typeof(greekGod)+ " " + typeof(warlord0));  
 	       break;
 
 	   case 5: 
 	       alert('Ai Chooses: ' + aiChoice);
 	       warlord0 = new greekGod("Aphrodite", "love", 220, 20, 8, "Greek");
-	       alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name());  
+	       alert('Ai Chooses: ' + aiChoice + " which is named: " + typeof(greekGod)+ " " + typeof(warlord0));  
 	       break;	      	       	     
 
 	   default: 
 	       alert('Default case happened... Wtf? ');
 	       break;
 	}
+	return warlord0;
 }
+
 
 //function that calls gameOver() when either warlord is out of hp
 function checkHp(warlord0, warlord1){
