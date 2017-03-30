@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+	var warlord0 = {};
+	var warlord1 = {};
+	var team0 = [];
+	var team1 = [];
+	var typeMultiplier = 1;
+
+
+	var zeus = {
+		name:"Zeus",
+		type:"Electric",
+		hp:"200",
+		attack:"18",
+		defence:"10"
+
+	};
+
+	var hades = {
+		name:"Hades",
+		type:"Fire",
+		hp:"220",
+		attack:"17",
+		defence:"9"
+
+	};
+
+	var hermes = {
+		name:"Hermes",
+		type:"Water",
+		hp:"240",
+		attack:"16",
+		defence:"7"
+
+	};
+
+	var apollo = {
+		name:"Apollo",
+		type:"Flying",
+		hp:"230",
+		attack:"18",
+		defence:"8"
+
+	};
+
+	var aphrodite = {
+		name:"Aphrodite",
+		type:"Love",
+		hp:"220",
+		attack:"20",
+		defence:"8"
+
+	};
+
+
+
+/*
+	class zeus{
+		constructor(name, type, hp, attack, defence){
+			this.name = name;
+			this.type = type;
+			this.hp = hp;
+			this.attack = attack;
+			this.defence = defence;
+		}
+
+		get name(){
+			return this.name;
+		}
+
+		get type(){
+			return this.type;
+		}
+
+		get hp(){
+			return this.hp
+		}
+
+		get attack(){
+			return this.attack;
+		}
+
+		get defence(){
+			return this.defence;
+		}
+
+		set name(newName){
+        	if(newName){
+            	this._name = newName;
+        	}
+        }
+
+   		set type(newType){
+        	if(newType){
+            	this._type = newType;
+        	}
+        }
+   		
+   		set hp(newHp){
+        	if(newHp){
+            	this._hp = newHp;
+        	}
+        }
+   		
+   		set attack(newAttack){
+        	if(newAttack){
+            	this._attack = newAttack;
+        	}
+        }
+   		
+   		set defence(newDefence){
+        	if(newDefence){
+            	this._defence = newDefence;
+        	}
+        }
+	}	//end class zeus
+
+	class hades{
+		constructor(name, type, hp, attack, defence){
+			this.name = name;
+			this.type = type;
+			this.hp = hp;
+			this.attack = attack;
+			this.defence = defence;
+		}
+
+		get name(){
+			return this.name;
+		}
+
+		get type(){
+			return this.type;
+		}
+
+		get hp(){
+			return this.hp
+		}
+
+		get attack(){
+			return this.attack;
+		}
+
+		get defence(){
+			return this.defence;
+		}
+
+		set name(newName){
+	    	if(newName){
+	        	this._name = newName;
+	    	}
+	    }
+
+			set type(newType){
+	    	if(newType){
+	        	this._type = newType;
+	    	}
+	    }
+			
+			set hp(newHp){
+	    	if(newHp){
+	        	this._hp = newHp;
+	    	}
+	    }
+			
+			set attack(newAttack){
+	    	if(newAttack){
+	        	this._attack = newAttack;
+	    	}
+	    }
+			
+			set defence(newDefence){
+	    	if(newDefence){
+	        	this._defence = newDefence;
+	    	}
+	    }
+	}	//end class Hades
+
+	class hermes{
+		constructor(name, type, hp, attack, defence){
+			this.name = name;
+			this.type = type;
+			this.hp = hp;
+			this.attack = attack;
+			this.defence = defence;
+		}
+
+		get name(){
+			return this.name;
+		}
+
+		get type(){
+			return this.type;
+		}
+
+		get hp(){
+			return this.hp
+		}
+
+		get attack(){
+			return this.attack;
+		}
+
+		get defence(){
+			return this.defence;
+		}
+
+		set name(newName){
+        	if(newName){
+            	this._name = newName;
+        	}
+        }
+
+   		set type(newType){
+        	if(newType){
+            	this._type = newType;
+        	}
+        }
+   		
+   		set hp(newHp){
+        	if(newHp){
+            	this._hp = newHp;
+        	}
+        }
+   		
+   		set attack(newAttack){
+        	if(newAttack){
+            	this._attack = newAttack;
+        	}
+        }
+   		
+   		set defence(newDefence){
+        	if(newDefence){
+            	this._defence = newDefence;
+        	}
+        }
+	}	//end class Hermes
+
+	class apollo{
+			constructor(name, type, hp, attack, defence){
+				this.name = name;
+				this.type = type;
+				this.hp = hp;
+				this.attack = attack;
+				this.defence = defence;
+			}
+
+			get name(){
+				return this.name;
+			}
+
+			get type(){
+				return this.type;
+			}
+
+			get hp(){
+				return this.hp
+			}
+
+			get attack(){
+				return this.attack;
+			}
+
+			get defence(){
+				return this.defence;
+			}
+
+			set name(newName){
+	        	if(newName){
+	            	this._name = newName;
+	        	}
+	        }
+
+	   		set type(newType){
+	        	if(newType){
+	            	this._type = newType;
+	        	}
+	        }
+	   		
+	   		set hp(newHp){
+	        	if(newHp){
+	            	this._hp = newHp;
+	        	}
+	        }
+	   		
+	   		set attack(newAttack){
+	        	if(newAttack){
+	            	this._attack = newAttack;
+	        	}
+	        }
+	   		
+	   		set defence(newDefence){
+	        	if(newDefence){
+	            	this._defence = newDefence;
+	        	}
+	        }
+	}	//end class Apollo
+
+	class aphrodite{
+		constructor(name, type, hp, attack, defence){
+			this.name = name;
+			this.type = type;
+			this.hp = hp;
+			this.attack = attack;
+			this.defence = defence;
+		}
+
+		get name(){
+			return this.name;
+		}
+
+		get type(){
+			return this.type;
+		}
+
+		get hp(){
+			return this.hp
+		}
+
+		get attack(){
+			return this.attack;
+		}
+
+		get defence(){
+			return this.defence;
+		}
+
+		set name(newName){
+	    	if(newName){
+	        	this._name = newName;
+	    	}
+	    }
+
+			set type(newType){
+	    	if(newType){
+	        	this._type = newType;
+	    	}
+	    }
+			
+			set hp(newHp){
+	    	if(newHp){
+	        	this._hp = newHp;
+	    	}
+	    }
+			
+			set attack(newAttack){
+	    	if(newAttack){
+	        	this._attack = newAttack;
+	    	}
+	    }
+			
+			set defence(newDefence){
+	    	if(newDefence){
+	        	this._defence = newDefence;
+	    	}
+	    }
+	}	//end class Aphrodite
+*/
+
+
+
+
+	//functions for the Person Player
+	function attack (){
+
+	}
+
+	function defend(){
+
+	}
+
+	function special(){
+
+	}
+
+
+
+function getRandomArbitrary(min, max) {
+	console.log("min: " + min + " max: " + max + " Math.random() " + Math.random());
+  return (Math.floor(Math.random() * (max - min)) + min);
+}
+
+
+
+//System functions
+//gameOver() is passed the winner object, and displays text and graphics inidicating the winner /stats / etc
+function gameOver(){
+	if(warlord == warlord0){
+		//display losing graphics and text
+
+	}else if(warlord == warlord1){
+		//display winning graphics and text
+
+	} else{ alert("Wtf?");}
+
+}
+
+function displayWarlords(zeus, hades, hermes, apollo, aphrodite){
+
+}
+
+function pickWarlords(zeus, hades, hermes, apollo, aphrodite){
+	alert("Please pic your Warlord. ");
+	
+}
+
+//for now it's assumed that since only greek gods are available, therefor the object has to be one
+//AI is warlord0, Player is warlord1
+//var warlord0;
+//var warlord1;
+
+
+//picks a warlord successfully, having trouble getting a property from it though
+//+ typeof(greekGod)+ " " + typeof(warlord0)  FOR LATER
+function aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0, warlord1){
+	//1-5 in order of parameters passed to this function
+ 	var aiChoice = getRandomArbitrary(1,6);
+ 	var arr = [];
+ 	switch (aiChoice){
+	   case 1: 
+	   		warlord0 = zeus;
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        console.log("type: " + warlord0.type + "");  
+	        break;
+
+	   case 2: 
+	   		warlord0 = hades;
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        console.log("type: " + warlord0.type + "");	        
+	        break;
+
+	   case 3: 
+	   		warlord0 = hermes;
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name); 
+	        console.log("type: " + warlord0.type + "");	         
+	        break;
+
+	   case 4: 
+	   		warlord0 = apollo;
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);
+	        console.log("type: " + warlord0.type + "");	          
+	        break;
+
+	   case 5: 
+	   		warlord0 = aphrodite;
+	        alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
+	        console.log("type: " + warlord0.type + "");	        
+	        break;	      	       	     
+
+	   default: 
+	       alert('Default case happened... Wtf? ');
+	       break;
+	}
+	return;
+}
+
+
+//function that calls gameOver() when either warlord is out of hp
+function checkHp(warlord0, warlord1){
+	if(warlord0.hp <= 0){
+		gameOver(warlord1);		//user victory
+	} else if(warlord1.hp <= 0){
+		gameOver(warlord0);		//AI victory
+	}
+
+}
+
+
+
+
+
+
+//start executing stuff
+
+
+//returns either a 1 or a 2.
+console.log(getRandomArbitrary(1,3));
+
+//AI Chooses it's warlords Randomly. 5 total warlords, need random between (1 through 5)
+console.log(getRandomArbitrary(1,6));
+
+//var 
+aiPickWarlords(zeus, hades, hermes, apollo, aphrodite);
+console.log();
+
+
+
+
+</script>
+</body>
+</html>
