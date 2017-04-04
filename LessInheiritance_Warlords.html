@@ -2,25 +2,68 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="styles.css"> 
+	<meta charset="utf-8" />
+
 </head>
-<body background="BG.jpg">
-<div align="center">
-<ul>
-<img src="zeus.png" height="125" width="87">
-<img src="hades.png" height="125" width="87">
-<img src="hermes.png" height="125" width="87">
-<img src="apollo.png" height="125" width="87">
-<img src="">
-</ul>
+<body>
+<div align="center" id="img">
+<table>
+<tr>
+<td><img src="zeus.png" height="100" width="60" id="img"></td>
+<td><img src="hades.png" height="100" width="60" id="img"></td>
+<td><img src="hermes.png" height="100" width="60" id="img"></td>
+<td><img src="apollo.png" height="100" width="60" id="img"></td>
+<td><img src="aphrodite.jpg" height="100" width="60" id="img"></td>
+</tr>
+</table>
+
+
+<!--
+<script type="text/javascript">
+document.getElementById("img").addEventListener("mouseover", mouseOver);
+document.getElementById("img").addEventListener("mouseout", mouseOut);
+
+function mouseOver(){
+	document.getElementById("img").style.color = "red";
+}
+
+function mouseOut(){
+	document.getElementById("img").style.color = "black";
+}
+</script>
+-->
+
+
+
 <br />
 <p>
-<button type=button> Zeus. </button>
-<button type=button> Hades. </button>
-<button type=button> Hermes. </button>
-<button type=button> Apollo. </button>
-<button type=button> Aphrodite. </button>
+<!--
+<table>
+<tr>
+<td><button type="button" id="button1" onclick="pickWarlords()"> Zeus. </button></td>
+<td><button type="button" id="button2" onclick="pickWarlords()"> Hades. </button></td>
+<td><button type="button" id="button3" onclick="pickWarlords()"> Hermes. </button></td>
+<td><button type="button" id="button4" onclick="pickWarlords()"> Apollo. </button></td>
+<td><button type="button" id="button5" onclick="pickWarlords()"> Aphrodite. </button></td>
+</tr>
+</table>
+-->
+
+<form>
+	<input type="button" id="main" value="zeus" onclick="chooseWarlords(1);" />
+	<input type="button" id="main" value="hades" onclick="chooseWarlords(2);" />
+	<input type="button" id="main" value="hermes" onclick="chooseWarlords(3);"/>
+	<input type="button" id="main" value="apollo" onclick="chooseWarlords(4);"/>
+	<input type="button" id="main" value="aphrodite" onclick="chooseWarlords(5);"/>
+</form>
+
+
+
 
 </div>
+
+
 <script type="text/javascript">
 	
 
@@ -418,15 +461,93 @@ function gameOver(warlord0, warlord1){
 
 }
 
-function displayWarlords(zeus, hades, hermes, apollo, aphrodite){
+function displayWarlords(){
 
 }
 
+function chooseWarlords(y){
+	switch(y){
+		case 1:
+			team1.push(zeus);
+			alert("zeus");
+			break;
+
+		case 2:
+			team1.push(hades);
+			alert("hades");
+			break;
+
+		case 3:
+			team1.push(hermes);
+			alert("hermes");
+			break;
+
+		case 4:
+			team1.push(apollo);
+			alert("apollo");
+			break;
+
+		case 5:
+			team1.push(aphrodite);
+			alert("aphrodite");
+			break;
+
+		default:
+			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
+			var warlord1 = team1.pop();
+			console.log("warlord1.name is: " + warlord1);
+			alert('Default case happened... Wtf? ');
+			break;
+	}
+}	//End
+
 
 //use buttons to indicate which warlords are available
-function pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1){
-	alert("Please pic your Warlord. ");
-	
+function pickWarlords(){
+	//alert("Please pic your Warlord. ");
+
+
+	//button.onclick = function(){myScript};
+	//getting a null value here, didnt want it.
+	var x = document.getElementById("main").value;
+	switch(x){
+		case 1:
+			team1.push(zeus);
+			alert("zeus");
+			break;
+
+		case 2:
+			team1.push(hades);
+			alert("hades");
+			break;
+
+		case 3:
+			team1.push(hermes);
+			alert("hermes");
+			break;
+
+		case 4:
+			team1.push(apollo);
+			alert("apollo");
+			break;
+
+		case 5:
+			team1.push(aphrodite);
+			alert("aphrodite");
+			break;
+
+		default:
+			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
+			var warlord1 = team1.pop();
+			console.log("warlord1.name is: " + warlord1.name);
+			alert('Default case happened... Wtf? ');
+			break;
+
+	}
+	//returning undefined undefined. need to change that.
+	console.log(warlord1.name + " " + warlord1.type)
+
+	return warlord1;
 }
 
 
@@ -436,7 +557,7 @@ function pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1){
 
 //picks a warlord successfully, having trouble getting a property from it though
 //+ typeof(greekGod)+ " " + typeof(warlord0)  FOR LATER
-function aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0, team0){
+function aiPickWarlords(){
 	//1-5 in order of parameters passed to this function
  	var aiChoice = getRandomArbitrary(1,6);
  	var arr = [];
@@ -503,13 +624,17 @@ console.log(getRandomArbitrary(1,3));
 //AI Chooses it's warlords Randomly. 5 total warlords, need random between (1 through 5)
 console.log(getRandomArbitrary(1,6));
 
-//var 
+//make the Ai pick a warlord
 aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0);
-console.log();
+
+
+//make the user pick a warlord
+//pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1);
 
 
 
 
 </script>
+
 </body>
 </html>
