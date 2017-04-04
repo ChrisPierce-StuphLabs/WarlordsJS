@@ -1,66 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="styles.css"> 
-	<meta charset="utf-8" />
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="styles.css"> 
+		<meta charset="utf-8" />
 
-</head>
+	</head>
 <body>
 <div align="center" id="img">
+
 <table>
-<tr>
-<td><img src="zeus.png" height="100" width="60" id="img"></td>
-<td><img src="hades.png" height="100" width="60" id="img"></td>
-<td><img src="hermes.png" height="100" width="60" id="img"></td>
-<td><img src="apollo.png" height="100" width="60" id="img"></td>
-<td><img src="aphrodite.jpg" height="100" width="60" id="img"></td>
-</tr>
+	<tr>
+		<td><img src="zeus.png" height="100" width="60" id="img"></td>
+		<td><img src="hades.png" height="100" width="60" id="img"></td>
+		<td><img src="hermes.png" height="100" width="60" id="img"></td>
+		<td><img src="apollo.png" height="100" width="60" id="img"></td>
+		<td><img src="aphrodite.jpg" height="100" width="60" id="img"></td>
+	</tr>
 </table>
-
-
-<!--
-<script type="text/javascript">
-document.getElementById("img").addEventListener("mouseover", mouseOver);
-document.getElementById("img").addEventListener("mouseout", mouseOut);
-
-function mouseOver(){
-	document.getElementById("img").style.color = "red";
-}
-
-function mouseOut(){
-	document.getElementById("img").style.color = "black";
-}
-</script>
--->
-
 
 
 <br />
 <p>
-<!--
-<table>
-<tr>
-<td><button type="button" id="button1" onclick="pickWarlords()"> Zeus. </button></td>
-<td><button type="button" id="button2" onclick="pickWarlords()"> Hades. </button></td>
-<td><button type="button" id="button3" onclick="pickWarlords()"> Hermes. </button></td>
-<td><button type="button" id="button4" onclick="pickWarlords()"> Apollo. </button></td>
-<td><button type="button" id="button5" onclick="pickWarlords()"> Aphrodite. </button></td>
-</tr>
-</table>
--->
 
 <form>
-	<input type="button" id="main" value="zeus" onclick="chooseWarlords(1);" />
-	<input type="button" id="main" value="hades" onclick="chooseWarlords(2);" />
-	<input type="button" id="main" value="hermes" onclick="chooseWarlords(3);"/>
-	<input type="button" id="main" value="apollo" onclick="chooseWarlords(4);"/>
-	<input type="button" id="main" value="aphrodite" onclick="chooseWarlords(5);"/>
+	<table>
+		<tr>
+			<td><input type="button" id="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
+			<td><input type="button" id="main" value="hades" onclick="chooseWarlords(2);" /></td>
+			<td><input type="button" id="main" value="hermes" onclick="chooseWarlords(3);" /></td>
+			<td><input type="button" id="main" value="apollo" onclick="chooseWarlords(4);" /></td>
+			<td><input type="button" id="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+		</tr>
+	</table>
 </form>
-
-
-
-
 </div>
 
 
@@ -120,312 +93,6 @@ function mouseOut(){
 	};
 
 
-
-/*
-	class zeus{
-		constructor(name, type, hp, attack, defence){
-			this.name = name;
-			this.type = type;
-			this.hp = hp;
-			this.attack = attack;
-			this.defence = defence;
-		}
-
-		get name(){
-			return this.name;
-		}
-
-		get type(){
-			return this.type;
-		}
-
-		get hp(){
-			return this.hp
-		}
-
-		get attack(){
-			return this.attack;
-		}
-
-		get defence(){
-			return this.defence;
-		}
-
-		set name(newName){
-        	if(newName){
-            	this._name = newName;
-        	}
-        }
-
-   		set type(newType){
-        	if(newType){
-            	this._type = newType;
-        	}
-        }
-   		
-   		set hp(newHp){
-        	if(newHp){
-            	this._hp = newHp;
-        	}
-        }
-   		
-   		set attack(newAttack){
-        	if(newAttack){
-            	this._attack = newAttack;
-        	}
-        }
-   		
-   		set defence(newDefence){
-        	if(newDefence){
-            	this._defence = newDefence;
-        	}
-        }
-	}	//end class zeus
-
-	class hades{
-		constructor(name, type, hp, attack, defence){
-			this.name = name;
-			this.type = type;
-			this.hp = hp;
-			this.attack = attack;
-			this.defence = defence;
-		}
-
-		get name(){
-			return this.name;
-		}
-
-		get type(){
-			return this.type;
-		}
-
-		get hp(){
-			return this.hp
-		}
-
-		get attack(){
-			return this.attack;
-		}
-
-		get defence(){
-			return this.defence;
-		}
-
-		set name(newName){
-	    	if(newName){
-	        	this._name = newName;
-	    	}
-	    }
-
-			set type(newType){
-	    	if(newType){
-	        	this._type = newType;
-	    	}
-	    }
-			
-			set hp(newHp){
-	    	if(newHp){
-	        	this._hp = newHp;
-	    	}
-	    }
-			
-			set attack(newAttack){
-	    	if(newAttack){
-	        	this._attack = newAttack;
-	    	}
-	    }
-			
-			set defence(newDefence){
-	    	if(newDefence){
-	        	this._defence = newDefence;
-	    	}
-	    }
-	}	//end class Hades
-
-	class hermes{
-		constructor(name, type, hp, attack, defence){
-			this.name = name;
-			this.type = type;
-			this.hp = hp;
-			this.attack = attack;
-			this.defence = defence;
-		}
-
-		get name(){
-			return this.name;
-		}
-
-		get type(){
-			return this.type;
-		}
-
-		get hp(){
-			return this.hp
-		}
-
-		get attack(){
-			return this.attack;
-		}
-
-		get defence(){
-			return this.defence;
-		}
-
-		set name(newName){
-        	if(newName){
-            	this._name = newName;
-        	}
-        }
-
-   		set type(newType){
-        	if(newType){
-            	this._type = newType;
-        	}
-        }
-   		
-   		set hp(newHp){
-        	if(newHp){
-            	this._hp = newHp;
-        	}
-        }
-   		
-   		set attack(newAttack){
-        	if(newAttack){
-            	this._attack = newAttack;
-        	}
-        }
-   		
-   		set defence(newDefence){
-        	if(newDefence){
-            	this._defence = newDefence;
-        	}
-        }
-	}	//end class Hermes
-
-	class apollo{
-			constructor(name, type, hp, attack, defence){
-				this.name = name;
-				this.type = type;
-				this.hp = hp;
-				this.attack = attack;
-				this.defence = defence;
-			}
-
-			get name(){
-				return this.name;
-			}
-
-			get type(){
-				return this.type;
-			}
-
-			get hp(){
-				return this.hp
-			}
-
-			get attack(){
-				return this.attack;
-			}
-
-			get defence(){
-				return this.defence;
-			}
-
-			set name(newName){
-	        	if(newName){
-	            	this._name = newName;
-	        	}
-	        }
-
-	   		set type(newType){
-	        	if(newType){
-	            	this._type = newType;
-	        	}
-	        }
-	   		
-	   		set hp(newHp){
-	        	if(newHp){
-	            	this._hp = newHp;
-	        	}
-	        }
-	   		
-	   		set attack(newAttack){
-	        	if(newAttack){
-	            	this._attack = newAttack;
-	        	}
-	        }
-	   		
-	   		set defence(newDefence){
-	        	if(newDefence){
-	            	this._defence = newDefence;
-	        	}
-	        }
-	}	//end class Apollo
-
-	class aphrodite{
-		constructor(name, type, hp, attack, defence){
-			this.name = name;
-			this.type = type;
-			this.hp = hp;
-			this.attack = attack;
-			this.defence = defence;
-		}
-
-		get name(){
-			return this.name;
-		}
-
-		get type(){
-			return this.type;
-		}
-
-		get hp(){
-			return this.hp
-		}
-
-		get attack(){
-			return this.attack;
-		}
-
-		get defence(){
-			return this.defence;
-		}
-
-		set name(newName){
-	    	if(newName){
-	        	this._name = newName;
-	    	}
-	    }
-
-			set type(newType){
-	    	if(newType){
-	        	this._type = newType;
-	    	}
-	    }
-			
-			set hp(newHp){
-	    	if(newHp){
-	        	this._hp = newHp;
-	    	}
-	    }
-			
-			set attack(newAttack){
-	    	if(newAttack){
-	        	this._attack = newAttack;
-	    	}
-	    }
-			
-			set defence(newDefence){
-	    	if(newDefence){
-	        	this._defence = newDefence;
-	    	}
-	    }
-	}	//end class Aphrodite
-*/
-
-
-
-
 	//functions for the Person Player
 	function attack (){
 
@@ -450,7 +117,7 @@ function getRandomArbitrary(min, max) {
 
 //System functions
 //gameOver() is passed the winner object, and displays text and graphics inidicating the winner /stats / etc
-function gameOver(warlord0, warlord1){
+function gameOver(){
 	if(warlord == warlord0){
 		//display losing graphics and text
 
@@ -461,98 +128,47 @@ function gameOver(warlord0, warlord1){
 
 }
 
-function displayWarlords(){
-
-}
-
-function chooseWarlords(y){
+function chooseWarlords(y) {
 	switch(y){
 		case 1:
-			team1.push(zeus);
-			alert("zeus");
+			warlord1 = zeus;
+			console.log("zeus name: " + zeus.name);
+			//alert("zeus");
 			break;
 
 		case 2:
-			team1.push(hades);
-			alert("hades");
+			warlord1 = hades;
+			console.log("hades name: " + hades.name);
+			//alert("hades");
 			break;
 
 		case 3:
-			team1.push(hermes);
-			alert("hermes");
+			warlord1 = hermes;
+			console.log("hermes name: " + hermes.name);
+			//alert("hermes");
 			break;
 
 		case 4:
-			team1.push(apollo);
-			alert("apollo");
+			warlord1 = apollo;
+			console.log("apollos name: " + apollo.name);
+			//alert("apollo");
 			break;
 
 		case 5:
-			team1.push(aphrodite);
-			alert("aphrodite");
+			warlord1 = aphrodite;
+			console.log("aphrodite: " + aphrodite.name);
+			//alert("aphrodite");
 			break;
 
 		default:
 			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
 			var warlord1 = team1.pop();
 			console.log("warlord1.name is: " + warlord1);
-			alert('Default case happened... Wtf? ');
+			//alert('Default case happened... Wtf? ');
 			break;
 	}
-}	//End
-
-
-//use buttons to indicate which warlords are available
-function pickWarlords(){
-	//alert("Please pic your Warlord. ");
-
-
-	//button.onclick = function(){myScript};
-	//getting a null value here, didnt want it.
-	var x = document.getElementById("main").value;
-	switch(x){
-		case 1:
-			team1.push(zeus);
-			alert("zeus");
-			break;
-
-		case 2:
-			team1.push(hades);
-			alert("hades");
-			break;
-
-		case 3:
-			team1.push(hermes);
-			alert("hermes");
-			break;
-
-		case 4:
-			team1.push(apollo);
-			alert("apollo");
-			break;
-
-		case 5:
-			team1.push(aphrodite);
-			alert("aphrodite");
-			break;
-
-		default:
-			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
-			var warlord1 = team1.pop();
-			console.log("warlord1.name is: " + warlord1.name);
-			alert('Default case happened... Wtf? ');
-			break;
-
-	}
-	//returning undefined undefined. need to change that.
-	console.log(warlord1.name + " " + warlord1.type)
-
 	return warlord1;
-}
-
-
-//for now it's assumed that since only greek gods are available, therefor the object has to be one
-//AI is warlord0, Player is warlord1
+}	//End chooseWarlords(y)
 
 
 //picks a warlord successfully, having trouble getting a property from it though
@@ -601,7 +217,7 @@ function aiPickWarlords(){
 
 
 //function that calls gameOver() when either warlord is out of hp
-function checkHp(warlord0, warlord1){
+function checkHp(){
 	if(warlord0.hp <= 0){
 		gameOver(warlord1);		//user victory
 	} else if(warlord1.hp <= 0){
@@ -617,6 +233,9 @@ function checkHp(warlord0, warlord1){
 
 //start executing stuff
 
+//alert("Pick a warlord with the buttons provided. ");
+
+
 
 //returns either a 1 or a 2.
 console.log(getRandomArbitrary(1,3));
@@ -624,9 +243,15 @@ console.log(getRandomArbitrary(1,3));
 //AI Chooses it's warlords Randomly. 5 total warlords, need random between (1 through 5)
 console.log(getRandomArbitrary(1,6));
 
-//make the Ai pick a warlord
-aiPickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord0);
 
+aiPickWarlords();
+//chooseWarlords(); //is called from the form
+
+
+
+
+//console.log("Team0: " + temp0);
+//console.log("Team1: " + temp1);
 
 //make the user pick a warlord
 //pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1);
