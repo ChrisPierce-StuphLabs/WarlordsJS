@@ -124,7 +124,7 @@ function gameOver(){
 	}else if(warlord == warlord1){
 		//display winning graphics and text
 
-	} else{ alert("Wtf?");}
+	} else{ alert("Wtf? Default state reached. ");}
 
 }
 
@@ -132,31 +132,31 @@ function chooseWarlords(y) {
 	switch(y){
 		case 1:
 			warlord1 = zeus;
-			console.log("zeus name: " + zeus.name);
+			//console.log("zeus name: " + zeus.name);
 			//alert("zeus");
 			break;
 
 		case 2:
 			warlord1 = hades;
-			console.log("hades name: " + hades.name);
+			//console.log("hades name: " + hades.name);
 			//alert("hades");
 			break;
 
 		case 3:
 			warlord1 = hermes;
-			console.log("hermes name: " + hermes.name);
+			//console.log("hermes name: " + hermes.name);
 			//alert("hermes");
 			break;
 
 		case 4:
 			warlord1 = apollo;
-			console.log("apollos name: " + apollo.name);
+			//console.log("apollos name: " + apollo.name);
 			//alert("apollo");
 			break;
 
 		case 5:
 			warlord1 = aphrodite;
-			console.log("aphrodite: " + aphrodite.name);
+			//console.log("aphrodite: " + aphrodite.name);
 			//alert("aphrodite");
 			break;
 
@@ -167,12 +167,13 @@ function chooseWarlords(y) {
 			//alert('Default case happened... Wtf? ');
 			break;
 	}
+	console.log("Warlord0: " + warlord0.name + " Warlord1: " + warlord1.name );
 	return warlord1;
 }	//End chooseWarlords(y)
 
 
+
 //picks a warlord successfully, having trouble getting a property from it though
-//+ typeof(greekGod)+ " " + typeof(warlord0)  FOR LATER
 function aiPickWarlords(){
 	//1-5 in order of parameters passed to this function
  	var aiChoice = getRandomArbitrary(1,6);
@@ -213,7 +214,8 @@ function aiPickWarlords(){
 	       break;
 	}
 	return warlord0;
-}
+}	//end of aiPickWarlords()
+
 
 
 //function that calls gameOver() when either warlord is out of hp
@@ -226,13 +228,22 @@ function checkHp(){
 
 }
 
+function isTurn(){
+	if((turn % 2) == 0){
+		console.log("Turn is even at: " + turn);
+	} else if((turn % 2) == 1){
+		console.log("Turn is odd at: " + turn);
+	} else{ console.log(" Something went wrong. Default state at else. "); }
+	return turn;
+}
+
+
 
 
 
 
 
 //start executing stuff
-
 //alert("Pick a warlord with the buttons provided. ");
 
 
@@ -245,16 +256,14 @@ console.log(getRandomArbitrary(1,6));
 
 
 aiPickWarlords();
-//chooseWarlords(); //is called from the form
+//by now both warlord0 and warlord1 should both be picked and not null.
 
 
+/*By now both ai and user should have picked their warlords. */
+while(warlord0.hp >= 1 && warlord1.hp >= 1){
+	isTurn();
+}
 
-
-//console.log("Team0: " + temp0);
-//console.log("Team1: " + temp1);
-
-//make the user pick a warlord
-//pickWarlords(zeus, hades, hermes, apollo, aphrodite, warlord1);
 
 
 
