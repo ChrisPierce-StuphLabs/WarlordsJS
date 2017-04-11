@@ -97,21 +97,38 @@
 
 
 
+<!-- Here is the hidden html for when the battle starts. -->
+
+
 
 
 
 
 <script type="text/javascript">
 
+	//start associative array to associate 1-5 with warlords 1-5's image
+	var whichWarlord = {
+		'1': 'zeus',
+		'2': 'hades',
+		'3': 'hermes',
+		'4': 'apollo',
+		'5': 'aphrodite'
+	};
+
 
 	
-
 	var warlord0 = {};
 	var warlord1 = {};
+	
 	var team0 = [];
 	var team1 = [];
+	
 	var typeMultiplier = 1;
 	var turn = 1;
+	
+	var img0 = 0;
+	var img1 = 0;
+
 
 
 	var zeus = {
@@ -168,21 +185,23 @@
 	
 	//using JQuery to hide elements once the warlord(s) have been chosen.
 	function hide(){		
-		$(".main").hide();
-		$(".topMain").hide();
-		$(".introTitle").show();
+		$(".main").hide("slow");
+		$(".topMain").hide("slow");
+		$(".introTitle").show("slow");
 	}
 
 
 	//show elements for the battle
 	function showBattle(){
-
+		$(".arena").show();
+		$(".card0").show();
+		$(".card1").show();
 	}
 
 
 	//functions for the Person Player
 	function attack (){
-		var attk1 = ((warlord1.attack * typeMultiplier) + math.floor(math.random(1,10)));		
+		var attk1 = ((warlord1.attack * typeMultiplier) + math.floor(math.random(1,10) ));		
 		console.log(attk1);
 		return(attk1);
 	}
@@ -192,7 +211,8 @@
 		if(warlord1.defence < 13){
 			warlord1.defence += 3;
 			
-			// TODO: deteriorate defence -1 every turn until its at it's natural state	
+			// TODO: deteriorate defence -1 every turn until its at it's natural state
+			//deteriorate();	
 			return(def1);	
 		}
 	}
@@ -234,14 +254,18 @@
 			warlord0.typeMultiplier = 2;
 		}// end If type0
 
-		console.log("Warlord1 typeMultiplier is: " + warlord1.typeMultiplier);
-		console.log("Warlord0 typeMultiplier is: " + warlord0.typeMultiplier);
+		//console.log("Warlord1 typeMultiplier is: " + warlord1.typeMultiplier);
+		//console.log("Warlord0 typeMultiplier is: " + warlord0.typeMultiplier);
 
 	}// end getTypeMultiplier()
 
 
 	
 
+/*function deteriorate(det){
+
+	return (--det);
+} */
 
 
 function getRandomArbitrary(min, max) {
@@ -276,6 +300,7 @@ function chooseWarlords(y) {
 	switch(y){
 		case 1:
 			warlord1 = zeus;
+			$(".tp1").addClass("glowBlue");
 			console.log("zeus name: " + zeus.name);
 			//alert("zeus");
 			break;
@@ -310,12 +335,15 @@ function chooseWarlords(y) {
 			//console.log("warlord1.name is: " + warlord1);
 			//alert('Default case happened... Wtf? ');
 			break;
+
+
 	}
 	
 	getTypeMultiplier();
 
+
 	//for debug
-	aiAttack();
+	//aiAttack();
 
 	hide();
 	//return warlord1;
@@ -373,15 +401,17 @@ function aiPickWarlords(){
 function aiAttack(){
 	var dmgTotal = 0;
 
-	console.log("warlord0.attack: " + warlord0.attack + " typeMultiplier: " + typeMultiplier + " dmgTotal: " );
-	dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) );
-	console.log("dmgTotal: " + dmgTotal);
+	//console.log("warlord0.attack: " + warlord0.attack + " typeMultiplier: " + typeMultiplier + " dmgTotal: " );
+	//dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) );
+	//console.log("dmgTotal: " + dmgTotal);
 
-	return dmgTotal;
+	return (dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) ));
+;
 }
 
 
 function aiDefend(dmg){
+	deteriorate();  
 	return (dmg -= warlord0.defence);
 }
 
@@ -413,6 +443,9 @@ function isTurn(){
 	} else{ console.log(" Something went wrong. Default state at else. "); }
 	return turn;
 }
+
+
+
 
 
 

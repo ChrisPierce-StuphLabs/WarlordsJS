@@ -31,3 +31,16 @@ body {
 .userTitle {
 	/*margin-left: auto; margin-right: auto*/
 }
+
+
+.glowBlue {
+	-webkit-box-shadow:0 0 20px blue; 
+	-moz-box-shadow: 0 0 20px blue;
+	box-shadow:0 0 20px blue;
+}
+
+.glowRed {
+	-webkit-box-shadow:0 0 20px red; 
+	-moz-box-shadow: 0 0 20px red;
+	box-shadow:0 0 20px red;	
+}
