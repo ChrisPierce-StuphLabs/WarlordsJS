@@ -7,15 +7,19 @@
 
 	</head>
 <body>
+
+<!-- JQuery inclusion from CDN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 <div align="center" id="img">
 
 <table>
 	<tr>
-		<td><img src="zeus.png" height="100" width="60" id="img"></td>
-		<td><img src="hades.png" height="100" width="60" id="img"></td>
-		<td><img src="hermes.png" height="100" width="60" id="img"></td>
-		<td><img src="apollo.png" height="100" width="60" id="img"></td>
-		<td><img src="aphrodite.jpg" height="100" width="60" id="img"></td>
+		<td><img src="zeus.png" height="100" width="60" class="main"></td>
+		<td><img src="hades.png" height="100" width="60" class="main"></td>
+		<td><img src="hermes.png" height="100" width="60" class="main"></td>
+		<td><img src="apollo.png" height="100" width="60" class="main"></td>
+		<td><img src="aphrodite.jpg" height="100" width="60" class="main"></td>
 	</tr>
 </table>
 
@@ -26,18 +30,24 @@
 <form>
 	<table>
 		<tr>
-			<td><input type="button" id="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
-			<td><input type="button" id="main" value="hades" onclick="chooseWarlords(2);" /></td>
-			<td><input type="button" id="main" value="hermes" onclick="chooseWarlords(3);" /></td>
-			<td><input type="button" id="main" value="apollo" onclick="chooseWarlords(4);" /></td>
-			<td><input type="button" id="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+			<td><input type="button" class="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
+			<td><input type="button" class="main" value="hades" onclick="chooseWarlords(2);" /></td>
+			<td><input type="button" class="main" value="hermes" onclick="chooseWarlords(3);" /></td>
+			<td><input type="button" class="main" value="apollo" onclick="chooseWarlords(4);" /></td>
+			<td><input type="button" class="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
 		</tr>
 	</table>
 </form>
 </div>
 
 
+
+
+
+
 <script type="text/javascript">
+
+
 	
 
 	var warlord0 = {};
@@ -53,7 +63,8 @@
 		type:"Electric",
 		hp:"200",
 		attack:"18",
-		defence:"10"
+		defence:"10",
+		typeMultiplier:"1"
 
 	};
 
@@ -62,7 +73,8 @@
 		type:"Fire",
 		hp:"220",
 		attack:"17",
-		defence:"9"
+		defence:"9",
+		typeMultiplier:"1"
 
 	};
 
@@ -71,7 +83,8 @@
 		type:"Water",
 		hp:"240",
 		attack:"16",
-		defence:"7"
+		defence:"7",
+		typeMultiplier:"1"
 
 	};
 
@@ -80,7 +93,8 @@
 		type:"Flying",
 		hp:"230",
 		attack:"18",
-		defence:"8"
+		defence:"8",
+		typeMultiplier:"1"
 
 	};
 
@@ -89,9 +103,19 @@
 		type:"Love",
 		hp:"220",
 		attack:"20",
-		defence:"8"
+		defence:"8",
+		typeMultiplier:"1"
 
 	};
+
+
+	
+	function hide(){		
+		//var toHide = document.getElementsByClassName("main")[0];
+		$(".main").hide();
+		//document.getElementById('main');
+		//toHide.style.display='none';
+	}
 
 
 	//functions for the Person Player
@@ -103,8 +127,8 @@
 
 	function defend(){
 		var def1 = 0;
-		if(warlord1.defence <= 13){
-			warlord1.defence += 5;
+		if(warlord1.defence < 13){
+			warlord1.defence += 3;
 			
 			// TODO: deteriorate defence -1 every turn until its at it's natural state	
 			return(def1);	
@@ -116,6 +140,45 @@
 
 		return(spl1);
 	}
+
+	function getTypeMultiplier(){
+		var type0 = warlord0.type;
+		var type1 = warlord1.type;
+		console.log("T0: " + type0 +"  T1: " + type1);
+
+
+		if(type1 == "Electric" && type0 == "Water"){
+			warlord1.typeMultiplier = 2;
+		}else if(type1 == "Fire" && type0 == "Flying"){
+			warlord1.typeMultiplier = 2;
+		}else if(type1 == "Water" && type0 == "Fire"){
+			warlord1.typeMultiplier = 2;
+		}else if(type1 =="Flying" && type0 == "Love"){
+			warlord1.typeMultiplier = 2;			
+		}else if(type1 == "Love" && type0 == "Electric"){
+			warlord1.typeMultiplier = 2;
+		}// end If type1
+
+
+		if(type0 == "Electric" && type1 == "Water"){
+			warlord0.typeMultiplier = 2;
+		}else if(type0 == "Fire" && type1 == "Flying"){
+			warlord0.typeMultiplier = 2;
+		}else if(type0 == "Water" && type1 == "Fire"){
+			warlord0.typeMultiplier = 2;
+		}else if(type0 =="Flying" && type1 == "Love"){
+			warlord0.typeMultiplier = 2;			
+		}else if(type0 == "Love" && type1 == "Electric"){
+			warlord0.typeMultiplier = 2;
+		}// end If type0
+
+		console.log("Warlord1 typeMultiplier is: " + warlord1.typeMultiplier);
+		console.log("Warlord0 typeMultiplier is: " + warlord0.typeMultiplier);
+
+	}// end getTypeMultiplier()
+
+
+	
 
 
 
@@ -140,47 +203,52 @@ function gameOver(){
 }
 
 function chooseWarlords(y) {
+	//console.log(" The var passed is: " + y)
 	switch(y){
 		case 1:
 			warlord1 = zeus;
-			//console.log("zeus name: " + zeus.name);
+			console.log("zeus name: " + zeus.name);
 			//alert("zeus");
 			break;
 
 		case 2:
 			warlord1 = hades;
-			//console.log("hades name: " + hades.name);
+			console.log("hades name: " + hades.name);
 			//alert("hades");
 			break;
 
 		case 3:
 			warlord1 = hermes;
-			//console.log("hermes name: " + hermes.name);
+			console.log("hermes name: " + hermes.name);
 			//alert("hermes");
 			break;
 
 		case 4:
 			warlord1 = apollo;
-			//console.log("apollos name: " + apollo.name);
+			console.log("apollos name: " + apollo.name);
 			//alert("apollo");
 			break;
 
 		case 5:
 			warlord1 = aphrodite;
-			//console.log("aphrodite: " + aphrodite.name);
+			console.log("aphrodite: " + aphrodite.name);
 			//alert("aphrodite");
 			break;
 
 		default:
 			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
-			var warlord1 = team1.pop();
+			//var warlord1 = team1.pop();
 			//console.log("warlord1.name is: " + warlord1);
 			//alert('Default case happened... Wtf? ');
 			break;
 	}
-	//console.log("Warlord0: " + warlord0.name + " Warlord1: " + warlord1.name );
-	return warlord1;
+	
+	getTypeMultiplier();
+	hide();
+	//return warlord1;
 }	//End chooseWarlords(y)
+
+
 
 
 
@@ -265,18 +333,19 @@ function isTurn(){
 
 
 aiPickWarlords();
+
 //by now both warlord0 and warlord1 should both be picked and not null.
 
 
 /*By now both ai and user should have picked their warlords. */
 // This is the main loop that governs the fight until one warlord's hp attribute == 0
 
-while(warlord0.hp > 0 && warlord1.hp > 0){
+/* while(warlord0.hp > 0 && warlord1.hp > 0){
 	//console.log("warlord0's Hp is: " + warlord0.hp + " which should > 0 ");
 	isTurn();
 	console.log("turn is: " + turn);
 	turn++;
-}
+} */
 
 
 
