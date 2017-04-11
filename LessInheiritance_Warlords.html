@@ -253,7 +253,7 @@ function getRandomArbitrary(min, max) {
 function reset(){
 	$(".main").show();
 	$(".topMain").show();
-	$(".introTitle").hide();
+	//$(".introTitle").hide();
 	return 0;
 }
 
@@ -313,6 +313,10 @@ function chooseWarlords(y) {
 	}
 	
 	getTypeMultiplier();
+
+	//for debug
+	aiAttack();
+
 	hide();
 	//return warlord1;
 }	//End chooseWarlords(y)
@@ -366,6 +370,29 @@ function aiPickWarlords(){
 
 
 
+function aiAttack(){
+	var dmgTotal = 0;
+
+	console.log("warlord0.attack: " + warlord0.attack + " typeMultiplier: " + typeMultiplier + " dmgTotal: " );
+	dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) );
+	console.log("dmgTotal: " + dmgTotal);
+
+	return dmgTotal;
+}
+
+
+function aiDefend(dmg){
+	return (dmg -= warlord0.defence);
+}
+
+
+//TODO 
+function aiSpecial(){
+
+	return 0;
+}
+
+
 //function that calls gameOver() when either warlord is out of hp
 function checkHp(){
 	if(warlord0.hp <= 0){
@@ -402,6 +429,9 @@ function isTurn(){
 
 
 aiPickWarlords();
+
+//for debug
+//aiAttack();
 
 //by now both warlord0 and warlord1 should both be picked and not null.
 
