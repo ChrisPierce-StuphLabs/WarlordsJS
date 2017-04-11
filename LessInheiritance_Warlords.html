@@ -11,15 +11,19 @@
 <!-- JQuery inclusion from CDN-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
-<div align="center" id="img">
+<script type="text/javascript">
+$("topMain").disabled = true;
+</script>
 
+<div align="left" id="img">
+<!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 top pic 1"-->
 <table>
 	<tr>
-		<td><img src="zeus.png" height="100" width="60" class="main"></td>
-		<td><img src="hades.png" height="100" width="60" class="main"></td>
-		<td><img src="hermes.png" height="100" width="60" class="main"></td>
-		<td><img src="apollo.png" height="100" width="60" class="main"></td>
-		<td><img src="aphrodite.jpg" height="100" width="60" class="main"></td>
+		<td><img src="zeus.png" height="100" width="60" id="tp1" class="topMain"></td>
+		<td><img src="hades.png" height="100" width="60" id="tp2" class="topMain"></td>
+		<td><img src="hermes.png" height="100" width="60" id="tp3" class="topMain"></td>
+		<td><img src="apollo.png" height="100" width="60" id="tp4" class="topMain"></td>
+		<td><img src="aphrodite.jpg" height="100" width="60" id="tp5" class="topMain"></td>
 	</tr>
 </table>
 
@@ -30,15 +34,47 @@
 <form>
 	<table>
 		<tr>
-			<td><input type="button" class="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
-			<td><input type="button" class="main" value="hades" onclick="chooseWarlords(2);" /></td>
-			<td><input type="button" class="main" value="hermes" onclick="chooseWarlords(3);" /></td>
-			<td><input type="button" class="main" value="apollo" onclick="chooseWarlords(4);" /></td>
-			<td><input type="button" class="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+			<td><input type="button"  id="tb1" class="topMain" value="zeus" onclick="chooseWarlords(1);" /> </td>
+			<td><input type="button" id="tb2" class="topMain" value="hades" onclick="chooseWarlords(2);" /></td>
+			<td><input type="button" id="tb3" class="topMain" value="hermes" onclick="chooseWarlords(3);" /></td>
+			<td><input type="button" id="tb4" class="topMain" value="apollo" onclick="chooseWarlords(4);" /></td>
+			<td><input type="button" id="tb5" class="topMain" value="aphrodite" onclick="chooseWarlords(5);" /></td>
 		</tr>
 	</table>
 </form>
 </div>
+
+
+<!-- Begin RHS bot -->
+<div align="right" id="img">
+<table>
+	<tr>
+		<td><img src="zeus.png" height="100" width="60" id="p1" class="main"></td>
+		<td><img src="hades.png" height="100" width="60" id="p2" class="main"></td>
+		<td><img src="hermes.png" height="100" width="60" id="p3" class="main"></td>
+		<td><img src="apollo.png" height="100" width="60" id="p4" class="main"></td>
+		<td><img src="aphrodite.jpg" height="100" width="60" id="p5" class="main"></td>
+	</tr>
+</table>
+
+
+<br />
+<p>
+
+<form>
+	<table>
+		<tr>
+			<td><input type="button"  id="b1" class="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
+			<td><input type="button" id="b2" class="main" value="hades" onclick="chooseWarlords(2);" /></td>
+			<td><input type="button" id="b3" class="main" value="hermes" onclick="chooseWarlords(3);" /></td>
+			<td><input type="button" id="b4" class="main" value="apollo" onclick="chooseWarlords(4);" /></td>
+			<td><input type="button" id="b5" class="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+		</tr>
+	</table>
+</form>
+</div>
+
+
 
 
 
@@ -110,11 +146,15 @@
 
 
 	
+	//using JQuery to hide elements once the warlord(s) have been chosen.
 	function hide(){		
-		//var toHide = document.getElementsByClassName("main")[0];
 		$(".main").hide();
-		//document.getElementById('main');
-		//toHide.style.display='none';
+	}
+
+
+	//show elements for the battle
+	function showBattle(){
+
 	}
 
 
