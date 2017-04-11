@@ -34,11 +34,11 @@
 <!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 = top pic 1"-->
 <table>
 	<tr>
-		<td><img src="zeus.png" height="100" width="60" id="tp1" class="topMain"></td>
-		<td><img src="hades.png" height="100" width="60" id="tp2" class="topMain"></td>
-		<td><img src="hermes.png" height="100" width="60" id="tp3" class="topMain"></td>
-		<td><img src="apollo.png" height="100" width="60" id="tp4" class="topMain"></td>
-		<td><img src="aphrodite.jpg" height="100" width="60" id="tp5" class="topMain"></td>
+		<td><img src="zeus.png" height="100" width="55" id="tp1" class="topMain"></td>
+		<td><img src="hades.png" height="100" width="55" id="tp2" class="topMain"></td>
+		<td><img src="hermes.png" height="100" width="55" id="tp3" class="topMain"></td>
+		<td><img src="apollo.png" height="100" width="55" id="tp4" class="topMain"></td>
+		<td><img src="aphrodite.jpg" height="100" width="55" id="tp5" class="topMain"></td>
 	</tr>
 </table>
 
@@ -61,14 +61,21 @@
 
 
 <!-- Begin RHS bot -->
+<div align="right" class="container" style="margin-left: auto; margin-right: 120px">
+<span class="playerTitle"> PLAYER 1: </span> 
+</div>
+
+
+
 <div align="right" class="container" style="margin-left: auto; margin-right: auto">
 <table>
+
 	<tr>
-		<td><img src="zeus.png" height="100" width="60" id="p1" class="main"></td>
-		<td><img src="hades.png" height="100" width="60" id="p2" class="main"></td>
-		<td><img src="hermes.png" height="100" width="60" id="p3" class="main"></td>
-		<td><img src="apollo.png" height="100" width="60" id="p4" class="main"></td>
-		<td><img src="aphrodite.jpg" height="100" width="60" id="p5" class="main"></td>
+		<td><img src="zeus.png" height="100" width="55" id="p1" class="main"></td>
+		<td><img src="hades.png" height="100" width="55" id="p2" class="main"></td>
+		<td><img src="hermes.png" height="100" width="55" id="p3" class="main"></td>
+		<td><img src="apollo.png" height="100" width="55" id="p4" class="main"></td>
+		<td><img src="aphrodite.jpg" height="100" width="55" id="p5" class="main"></td>
 	</tr>
 </table>
 
@@ -106,7 +113,7 @@
 
 <script type="text/javascript">
 
-	//start associative array to associate 1-5 with warlords 1-5's image
+	//start associative array to associate 1-5 with warlords 1-5's image. might do this elsewhere instead.
 	var whichWarlord = {
 		'1': 'zeus',
 		'2': 'hades',
@@ -193,9 +200,9 @@
 
 	//show elements for the battle
 	function showBattle(){
-		$(".arena").show();
-		$(".card0").show();
-		$(".card1").show();
+		$(".arena").show("slow");
+		$(".card0").show("slow");
+		$(".card1").show("slow");
 	}
 
 
