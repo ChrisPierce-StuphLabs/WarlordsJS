@@ -1,6 +1,5 @@
 #main {
-	max-width: 200px;
-	margin 0 auto;
+
 }
 
 body {
@@ -11,9 +10,20 @@ body {
 }
 
 #button {
-	margin 0 auto;
+	margin 8 auto;
 }
 
 .button {
-	margin 0 auto;
+	margin 8 auto;
+}
+
+.container {
+
+	max-width: auto;
+	/*background-color: #C0C0C0; */
+}
+
+.introTitle {
+	text-decoration-color: red;
+
 }

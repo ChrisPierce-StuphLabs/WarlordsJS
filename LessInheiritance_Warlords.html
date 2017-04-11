@@ -11,12 +11,27 @@
 <!-- JQuery inclusion from CDN-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
+
+<!-- Use JQuery to hide the choice interface after a choice has been made from the user. -->
 <script type="text/javascript">
-$("topMain").disabled = true;
+	$(".topMain").disabled = true;
 </script>
 
-<div align="left" id="img">
-<!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 top pic 1"-->
+
+<!-- hide the FIGHT! text h1 -->
+<script type="text/javascript">
+	$(".introTitle").hide();
+</script>
+
+
+<div class ="introTitle" align="center">
+<h1> FIGHT! </h1>
+</div>
+
+
+
+<div class="container" style="margin-left: 80; margin-right: 800">
+<!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 = top pic 1"-->
 <table>
 	<tr>
 		<td><img src="zeus.png" height="100" width="60" id="tp1" class="topMain"></td>
@@ -34,11 +49,11 @@ $("topMain").disabled = true;
 <form>
 	<table>
 		<tr>
-			<td><input type="button"  id="tb1" class="topMain" value="zeus" onclick="chooseWarlords(1);" /> </td>
-			<td><input type="button" id="tb2" class="topMain" value="hades" onclick="chooseWarlords(2);" /></td>
-			<td><input type="button" id="tb3" class="topMain" value="hermes" onclick="chooseWarlords(3);" /></td>
-			<td><input type="button" id="tb4" class="topMain" value="apollo" onclick="chooseWarlords(4);" /></td>
-			<td><input type="button" id="tb5" class="topMain" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+			<td><input type="button"  id="tb1" class="topMain" value="zeus" /> </td>
+			<td><input type="button" id="tb2" class="topMain" value="hades" /></td>
+			<td><input type="button" id="tb3" class="topMain" value="hermes" /></td>
+			<td><input type="button" id="tb4" class="topMain" value="apollo" /></td>
+			<td><input type="button" id="tb5" class="topMain" value="aphrodite" /></td>
 		</tr>
 	</table>
 </form>
@@ -46,7 +61,7 @@ $("topMain").disabled = true;
 
 
 <!-- Begin RHS bot -->
-<div align="right" id="img">
+<div align="right" class="container" style="margin-left: auto; margin-right: auto">
 <table>
 	<tr>
 		<td><img src="zeus.png" height="100" width="60" id="p1" class="main"></td>
@@ -72,6 +87,11 @@ $("topMain").disabled = true;
 		</tr>
 	</table>
 </form>
+
+</div>
+
+<div align="center" lass="container" style="margin-left: auto; margin-right: auto">
+<input type="button" id="reset" class="reset" value="Reset_Game" onclick="reset();" />
 </div>
 
 
@@ -149,6 +169,8 @@ $("topMain").disabled = true;
 	//using JQuery to hide elements once the warlord(s) have been chosen.
 	function hide(){		
 		$(".main").hide();
+		$(".topMain").hide();
+		$(".introTitle").show();
 	}
 
 
@@ -227,6 +249,13 @@ function getRandomArbitrary(min, max) {
   return (Math.floor(Math.random() * (max - min)) + min);
 }
 
+
+function reset(){
+	$(".main").show();
+	$(".topMain").show();
+	$(".introTitle").hide();
+	return 0;
+}
 
 
 //System functions
