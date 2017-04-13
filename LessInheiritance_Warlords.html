@@ -14,6 +14,7 @@
 
 <!-- Use JQuery to hide the choice interface after a choice has been made from the user. -->
 <script type="text/javascript">
+	//disable buttons from ai's side
 	$(".topMain").disabled = true;
 </script>
 
@@ -24,10 +25,11 @@
 </script>
 
 
-<div class ="introTitle">
+
+
+<div align ="center" id="fightText">
 	<h1> FIGHT! </h1>
 </div>
-
 
 
 
@@ -37,7 +39,10 @@
 
 
 <div class="container">
+
+
 <!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 = top pic 1"-->
+<span id="toReset">
 <table>
 	<tr>
 		<td><img src="zeus.png" height="100" width="55" id="tp1" class="topMain"></td>
@@ -68,7 +73,7 @@
 
 <!-- Begin RHS bot -->
 <div align="right" class="container" style="margin-left: auto; margin-right: 110px">
-	<span class="playerTitle"> PLAYER 1: </span> 
+	<span class="playerTitle"> PLAYER 1: f 
 </div>
 
 
@@ -103,9 +108,9 @@
 </div>
 
 <div align="center" lass="container">
-<input type="button" id="reset" class="reset" value="Reset_Game" onclick="reset();" />
+	<input type="button" id="reset" class="reset" value="Reset_Game" onclick="reset();" />
 </div>
-
+</span>
 
 
 
@@ -309,7 +314,37 @@ function reset(){
 
 	$(".main").show();
 	$(".topMain").show();
+	
+	//LHS
+	$("#p1").removeClass("glowRed");
+	$("#p2").removeClass("glowRed");
+	$("#p3").removeClass("glowRed");
+	$("#p4").removeClass("glowRed");
+	$("#p5").removeClass("glowRed");
 	//.addClass("glowBlue")
+
+
+	$("#b1").removeClass("glowRed");
+	$("#b2").removeClass("glowRed");
+	$("#b3").removeClass("glowRed");
+	$("#b4").removeClass("glowRed");
+	$("#b5").removeClass("glowRed");
+
+
+	//RHS
+	$("#tp1").removeClass("glowBlue");
+	$("#tp2").removeClass("glowBlue");
+	$("#tp3").removeClass("glowBlue");
+	$("#tp4").removeClass("glowBlue");
+	$("#tp5").removeClass("glowBlue");
+	//.addClass("glowBlue")
+
+
+	$("#b1").removeClass("glowRed");
+	$("#b2").removeClass("glowRed");
+	$("#b3").removeClass("glowRed");
+	$("#b4").removeClass("glowRed");
+	$("#b5").removeClass("glowRed");
 
 
 	sleep(1000);
@@ -329,13 +364,14 @@ function gameOver(){
 
 }
 
-function chooseWarlords(y, hide) {
+function chooseWarlords(y) {
 	switch(y){
 		case 1:
 			warlord1 = zeus;
 			$("#p1").addClass("glowBlue");
 			$("#b1").addClass("glowBlue");
 			console.log("zeus name: " + zeus.name);
+			//hide();
 			break;
 
 		case 2:
@@ -368,9 +404,12 @@ function chooseWarlords(y, hide) {
 
 		default:
 			break;
+		
 	}
 	
 	getTypeMultiplier();
+	//sleep(2000);
+	hide();
 	
 }	//End chooseWarlords(y)
 
@@ -416,7 +455,9 @@ function aiPickWarlords(){
 	       alert('Default case happened... Wtf? ');
 	       break;
 	}
-	return warlord0;
+
+
+		
 }	//end of aiPickWarlords()
 
 
@@ -468,7 +509,8 @@ function isTurn(){
 
 aiPickWarlords();
 
-
+//sleep(1000);
+//hide();
 /*By now both ai and user should have picked their warlords. */
 // This is the main loop that governs the fight until one warlord's hp attribute == 0
 

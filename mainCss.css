@@ -8,6 +8,8 @@
 }
 
 .introTitle {
+	margin-left: auto; 
+	margin-right: auto;
 	align-content: center;
 
 }
@@ -58,5 +60,10 @@ body {
 }
 
 h1 {
+
 	align-content: center;
+}
+
+.reset {
+	align-content: bottom-center;		
 }
