@@ -25,7 +25,7 @@
 
 
 <div class ="introTitle">
-<h1> FIGHT! </h1>
+	<h1> FIGHT! </h1>
 </div>
 
 
@@ -68,38 +68,37 @@
 
 <!-- Begin RHS bot -->
 <div align="right" class="container" style="margin-left: auto; margin-right: 110px">
-<span class="playerTitle"> PLAYER 1: </span> 
+	<span class="playerTitle"> PLAYER 1: </span> 
 </div>
 
 
 
-<div align="right" class="container" style="margin-left: auto; margin-right: auto">
-<table>
+<div align="right" class="container">
+	<table>
 
-	<tr>
-		<td><img src="zeus.png" height="100" width="55" id="p1" class="main"></td>
-		<td><img src="hades.png" height="100" width="55" id="p2" class="main"></td>
-		<td><img src="hermes.png" height="100" width="55" id="p3" class="main"></td>
-		<td><img src="apollo.png" height="100" width="55" id="p4" class="main"></td>
-		<td><img src="aphrodite.jpg" height="100" width="55" id="p5" class="main"></td>
-	</tr>
-</table>
+		<tr>
+			<td><img src="zeus.png" height="100" width="55" id="p1" class="main"></td>
+			<td><img src="hades.png" height="100" width="55" id="p2" class="main"></td>
+			<td><img src="hermes.png" height="100" width="55" id="p3" class="main"></td>
+			<td><img src="apollo.png" height="100" width="55" id="p4" class="main"></td>
+			<td><img src="aphrodite.jpg" height="100" width="55" id="p5" class="main"></td>
+		</tr>
+	</table>
 
 
 <br />
 <p>
-
-<form>
-	<table>
-		<tr>
-			<td><input type="button"  id="b1" class="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
-			<td><input type="button" id="b2" class="main" value="hades" onclick="chooseWarlords(2);" /></td>
-			<td><input type="button" id="b3" class="main" value="hermes" onclick="chooseWarlords(3);" /></td>
-			<td><input type="button" id="b4" class="main" value="apollo" onclick="chooseWarlords(4);" /></td>
-			<td><input type="button" id="b5" class="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
-		</tr>
-	</table>
-</form>
+	<form>
+		<table>
+			<tr>
+				<td><input type="button"  id="b1" class="main" value="zeus" onclick="chooseWarlords(1);" /> </td>
+				<td><input type="button" id="b2" class="main" value="hades" onclick="chooseWarlords(2);" /></td>
+				<td><input type="button" id="b3" class="main" value="hermes" onclick="chooseWarlords(3);" /></td>
+				<td><input type="button" id="b4" class="main" value="apollo" onclick="chooseWarlords(4);" /></td>
+				<td><input type="button" id="b5" class="main" value="aphrodite" onclick="chooseWarlords(5);" /></td>
+			</tr>
+		</table>
+	</form>
 
 </div>
 
@@ -281,6 +280,25 @@
 } */
 
 
+function sleep(milliseconds, reset) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+		//$(".main").removeClass("glowBlue");
+		//$(".topMain").removeClass("glowRed");
+		
+}
+
+
+function turnOffGlow(){
+	//$("").
+
+}
+
+
 function getRandomArbitrary(min, max) {
 	//console.log("min: " + min + " max: " + max + " Math.random() " + Math.random());
   return (Math.floor(Math.random() * (max - min)) + min);
@@ -288,19 +306,18 @@ function getRandomArbitrary(min, max) {
 
 
 function reset(){
+
 	$(".main").show();
-	$(".main").addClass("glowBlue");
-
 	$(".topMain").show();
-	$(".topMain").addClass("glowRed");
+	//.addClass("glowBlue")
 
-	//$(".introTitle").hide();
+
+	sleep(1000);
+	
 	return 0;
 }
 
-
 //System functions
-//gameOver() is passed the winner object, and displays text and graphics inidicating the winner /stats / etc
 function gameOver(){
 	if(warlord == warlord0){
 		//display losing graphics and text
@@ -312,60 +329,47 @@ function gameOver(){
 
 }
 
-function chooseWarlords(y) {
-	//console.log(" The var passed is: " + y)
+function chooseWarlords(y, hide) {
 	switch(y){
 		case 1:
 			warlord1 = zeus;
+			$("#p1").addClass("glowBlue");
+
 			console.log("zeus name: " + zeus.name);
-			//alert("zeus");
 			break;
 
 		case 2:
 			warlord1 = hades;
+			$("#p1").addClass("glowBlue");
 			console.log("hades name: " + hades.name);
-			//alert("hades");
 			break;
 
 		case 3:
 			warlord1 = hermes;
+			$("#p1").addClass("glowBlue");
 			console.log("hermes name: " + hermes.name);
-			//alert("hermes");
 			break;
 
 		case 4:
 			warlord1 = apollo;
+			$("#p1").addClass("glowBlue");
 			console.log("apollos name: " + apollo.name);
-			//alert("apollo");
 			break;
 
 		case 5:
 			warlord1 = aphrodite;
+			$("#p1").addClass("glowBlue");
+
 			console.log("aphrodite: " + aphrodite.name);
-			//alert("aphrodite");
 			break;
 
 		default:
-			//console.log("aphrodite: " + aphrodite.name + " zeus: " + zeus.name);
-			//var warlord1 = team1.pop();
-			//console.log("warlord1.name is: " + warlord1);
-			//alert('Default case happened... Wtf? ');
 			break;
-
-
 	}
 	
 	getTypeMultiplier();
-
-
-	//for debug
-	//aiAttack();
-
-	hide();
-	//return warlord1;
+	
 }	//End chooseWarlords(y)
-
-
 
 
 
@@ -377,32 +381,27 @@ function aiPickWarlords(){
  	switch (aiChoice){
 	   case 1: 
 	   		warlord0 = zeus;
-	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
-	        //console.log("type: " + warlord0.type + "");  
+			$("#tp1").addClass("glowRed"); 
 	        break;
 
 	   case 2: 
 	   		warlord0 = hades;
-	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
-	        //console.log("type: " + warlord0.type + "");	        
+	   		$("#tp2").addClass("glowRed"); 
 	        break;
 
 	   case 3: 
 	   		warlord0 = hermes;
-	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name); 
-	        //console.log("type: " + warlord0.type + "");	         
+	   		$("#tp3").addClass("glowRed");	         
 	        break;
 
 	   case 4: 
 	   		warlord0 = apollo;
-	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);
-	        //console.log("type: " + warlord0.type + "");	          
+	   		$("#tp3").addClass("glowRed");	          
 	        break;
 
 	   case 5: 
 	   		warlord0 = aphrodite;
-	        //alert('Ai Chooses: ' + aiChoice + " which is named: " + warlord0.name);  
-	        //console.log("type: " + warlord0.type + "");	        
+	   		$("#tp3").addClass("glowRed");	        
 	        break;	      	       	     
 
 	   default: 
@@ -416,13 +415,8 @@ function aiPickWarlords(){
 
 function aiAttack(){
 	var dmgTotal = 0;
-
-	//console.log("warlord0.attack: " + warlord0.attack + " typeMultiplier: " + typeMultiplier + " dmgTotal: " );
-	//dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) );
-	//console.log("dmgTotal: " + dmgTotal);
-
 	return (dmgTotal = ((warlord0.attack * typeMultiplier) + getRandomArbitrary(1,5) ));
-;
+
 }
 
 
@@ -432,8 +426,8 @@ function aiDefend(dmg){
 }
 
 
-//TODO 
 function aiSpecial(){
+//TODO 
 
 	return 0;
 }
@@ -461,28 +455,10 @@ function isTurn(){
 }
 
 
-
-
-
-
-
-
-
-
 //start executing stuff
-
-//* getRandomArbitrary(1,3);
-
-//AI Chooses it's warlords Randomly. 5 total warlords, need random between (1 through 5)
-//* getRandomArbitrary(1,6);
 
 
 aiPickWarlords();
-
-//for debug
-//aiAttack();
-
-//by now both warlord0 and warlord1 should both be picked and not null.
 
 
 /*By now both ai and user should have picked their warlords. */
@@ -494,10 +470,6 @@ aiPickWarlords();
 	console.log("turn is: " + turn);
 	turn++;
 } */
-
-
-
-
 
 </script>
 

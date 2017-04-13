@@ -3,6 +3,8 @@
 .container {
 	margin-left: 80; 
 	margin-right: 800;
+
+	/* style="margin-left: auto; margin-right: auto" */
 }
 
 .introTitle {
@@ -40,6 +42,7 @@ body {
 	font-size: 24;
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
+	align-content: center;
 	outline-width: 3px;
 
 }
