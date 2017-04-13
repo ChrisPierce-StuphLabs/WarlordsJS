@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title></title>
-		<link rel="stylesheet" href="styles.css"> 
+		<link rel="stylesheet" href="mainCss.css"> 
 		<meta charset="utf-8" />
 
 	</head>
@@ -24,13 +24,19 @@
 </script>
 
 
-<div class ="introTitle" align="center">
+<div class ="introTitle">
 <h1> FIGHT! </h1>
 </div>
 
 
 
-<div class="container" style="margin-left: 80; margin-right: 800">
+
+<div align="left" class="container" id="aiTitle" style="margin-left: 100px; margin-right: auto">
+	<span class = "aiTitle"> COMPUTER: </span>
+</div>
+
+
+<div class="container">
 <!-- Begin LHS top --><!-- naming (t = top, b = bot),  (p = picture , b = button)  (#numberHere) IE: "tp1 = top pic 1"-->
 <table>
 	<tr>
@@ -61,7 +67,7 @@
 
 
 <!-- Begin RHS bot -->
-<div align="right" class="container" style="margin-left: auto; margin-right: 120px">
+<div align="right" class="container" style="margin-left: auto; margin-right: 110px">
 <span class="playerTitle"> PLAYER 1: </span> 
 </div>
 
@@ -97,7 +103,7 @@
 
 </div>
 
-<div align="center" lass="container" style="margin-left: auto; margin-right: auto">
+<div align="center" lass="container">
 <input type="button" id="reset" class="reset" value="Reset_Game" onclick="reset();" />
 </div>
 
@@ -283,7 +289,11 @@ function getRandomArbitrary(min, max) {
 
 function reset(){
 	$(".main").show();
+	$(".main").addClass("glowBlue");
+
 	$(".topMain").show();
+	$(".topMain").addClass("glowRed");
+
 	//$(".introTitle").hide();
 	return 0;
 }
@@ -307,7 +317,6 @@ function chooseWarlords(y) {
 	switch(y){
 		case 1:
 			warlord1 = zeus;
-			$(".tp1").addClass("glowBlue");
 			console.log("zeus name: " + zeus.name);
 			//alert("zeus");
 			break;

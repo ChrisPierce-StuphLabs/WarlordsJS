@@ -1,4 +1,16 @@
-#main {
+/*@import "styles.css"; */
+
+.container {
+	margin-left: 80; 
+	margin-right: 800;
+}
+
+.introTitle {
+	align-content: center;
+
+}
+
+#aiTitle {
 
 }
 
@@ -9,29 +21,6 @@ body {
     background-position: left -100px;
 
 }
-
-#button {
-	margin 8 auto;
-}
-
-.button {
-	margin 8 auto;
-}
-
-.container {
-
-	max-width: auto;
-	/*background-color: #C0C0C0; */
-}
-
-.introTitle {
-	text-decoration-color: red;
-
-}
-
-.userTitle {
-	/*margin-left: auto; margin-right: auto*/}
-
 
 
 .glowBlue {
@@ -65,3 +54,6 @@ body {
 
 }
 
+h1 {
+	align-content: center;
+}
