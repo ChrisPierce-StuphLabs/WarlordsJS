@@ -334,32 +334,35 @@ function chooseWarlords(y, hide) {
 		case 1:
 			warlord1 = zeus;
 			$("#p1").addClass("glowBlue");
-
+			$("#b1").addClass("glowBlue");
 			console.log("zeus name: " + zeus.name);
 			break;
 
 		case 2:
 			warlord1 = hades;
-			$("#p1").addClass("glowBlue");
+			$("#p2").addClass("glowBlue");
+			$("#b2").addClass("glowBlue");
 			console.log("hades name: " + hades.name);
 			break;
 
 		case 3:
 			warlord1 = hermes;
-			$("#p1").addClass("glowBlue");
+			$("#p3").addClass("glowBlue");
+			$("#b3").addClass("glowBlue");
 			console.log("hermes name: " + hermes.name);
 			break;
 
 		case 4:
 			warlord1 = apollo;
-			$("#p1").addClass("glowBlue");
+			$("#p4").addClass("glowBlue");
+			$("#b4").addClass("glowBlue");
 			console.log("apollos name: " + apollo.name);
 			break;
 
 		case 5:
 			warlord1 = aphrodite;
-			$("#p1").addClass("glowBlue");
-
+			$("#p5").addClass("glowBlue");
+			$("#b5").addClass("glowBlue");
 			console.log("aphrodite: " + aphrodite.name);
 			break;
 
@@ -381,27 +384,32 @@ function aiPickWarlords(){
  	switch (aiChoice){
 	   case 1: 
 	   		warlord0 = zeus;
-			$("#tp1").addClass("glowRed"); 
+	   		$("#tp1").addClass("glowRed"); 
+			$("#tb1").addClass("glowRed"); 
 	        break;
 
 	   case 2: 
 	   		warlord0 = hades;
 	   		$("#tp2").addClass("glowRed"); 
+			$("#tb2").addClass("glowRed"); 
 	        break;
 
 	   case 3: 
 	   		warlord0 = hermes;
 	   		$("#tp3").addClass("glowRed");	         
+			$("#tb3").addClass("glowRed"); 	   		
 	        break;
 
 	   case 4: 
 	   		warlord0 = apollo;
-	   		$("#tp3").addClass("glowRed");	          
+	   		$("#tp4").addClass("glowRed");
+	   		$("#tb4").addClass("glowRed"); 	          
 	        break;
 
 	   case 5: 
 	   		warlord0 = aphrodite;
-	   		$("#tp3").addClass("glowRed");	        
+	   		$("#tp5").addClass("glowRed");	
+	   		$("#tb5").addClass("glowRed");         
 	        break;	      	       	     
 
 	   default: 
